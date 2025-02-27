@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6c3j66rc0h1l"]
+
+[ext_resource type="Script" path="res://Scripts/game_picker.gd" id="1_pge5i"]
+[ext_resource type="Texture2D" uid="uid://c6c6oxn311qun" path="res://Assests/arrow-left-bold.svg" id="2_64fwf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pge5i")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.012
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 11.936
+offset_top = 12.224
+offset_right = 819.936
+offset_bottom = 820.224
+scale = Vector2(0.08, 0.08)
+icon = ExtResource("2_64fwf")
+flat = true
+
+[node name="Game1" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 153.0
+offset_top = 69.0
+offset_right = 393.0
+offset_bottom = 290.0
+text = "Game1"
+
+[node name="Game2" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 486.0
+offset_top = 73.0
+offset_right = 726.0
+offset_bottom = 294.0
+text = "Game2"
+
+[node name="Game3" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 830.0
+offset_top = 75.0
+offset_right = 1070.0
+offset_bottom = 296.0
+text = "Game3"
+
+[node name="Game4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 366.0
+offset_right = 394.0
+offset_bottom = 587.0
+text = "Game4"
+
+[node name="Game5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 365.0
+offset_right = 737.0
+offset_bottom = 586.0
+text = "Game5"
+
+[node name="Game6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 367.0
+offset_right = 1067.0
+offset_bottom = 588.0
+text = "Game6"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Game1" to="." method="_on_game_1_pressed"]

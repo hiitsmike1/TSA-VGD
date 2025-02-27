@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://doy36j6ik7tge"]
+
+[ext_resource type="Script" path="res://Scripts/game_1.gd" id="1_deakk"]
+[ext_resource type="PackedScene" uid="uid://0jdrxb0k6var" path="res://Scenes/player_1.tscn" id="1_wskpl"]
+[ext_resource type="PackedScene" uid="uid://de2yp4y5x3lml" path="res://Scenes/player_2.tscn" id="2_egjqw"]
+[ext_resource type="PackedScene" uid="uid://ywn0jy6npceb" path="res://Scenes/World.tscn" id="3_61o05"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="4_bi31s"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_deakk")
+
+[node name="Player1" parent="." instance=ExtResource("1_wskpl")]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(323, -48)
+jump_force1 = -350
+
+[node name="Player2" parent="." instance=ExtResource("2_egjqw")]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(-260, -45)
+jump_force2 = -350
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_61o05")]
+position = Vector2(-1542, 277)
+scale = Vector2(3, 3)
+
+[node name="StaticBody2D2" parent="StaticBody2D" instance=ExtResource("3_61o05")]
+position = Vector2(355, -105.667)
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="StaticBody2D3" parent="StaticBody2D" instance=ExtResource("3_61o05")]
+position = Vector2(295, -128.667)
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="StaticBody2D4" parent="StaticBody2D" instance=ExtResource("3_61o05")]
+position = Vector2(237, -148.333)
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="StaticBody2D5" parent="StaticBody2D" instance=ExtResource("3_61o05")]
+position = Vector2(312.333, -170.333)
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="StaticBody2D6" parent="StaticBody2D" instance=ExtResource("3_61o05")]
+position = Vector2(391, -185)
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="StaticBody2D7" parent="StaticBody2D" instance=ExtResource("3_61o05")]
+position = Vector2(472.667, -200.333)
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("4_bi31s")
+
+[node name="Timer" type="Timer" parent="."]

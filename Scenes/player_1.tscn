@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://0jdrxb0k6var"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_7b1no"]
+[ext_resource type="Texture2D" uid="uid://ecvq2humr4s3" path="res://icon.svg" id="2_lxonr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duyns"]
+size = Vector2(56, 56)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t7ni"]
+radius = 37.2156
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1, -1)
+script = ExtResource("1_7b1no")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_duyns")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("2_lxonr")
+
+[node name="It1" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = -7.0
+offset_top = -59.0
+offset_right = 6.0
+offset_bottom = -46.0
+color = Color(1, 0, 0, 1)
+
+[node name="ItRadius1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItRadius1"]
+shape = SubResource("CircleShape2D_2t7ni")
+
+[connection signal="area_entered" from="ItRadius1" to="." method="_on_it_radius_1_area_entered"]
