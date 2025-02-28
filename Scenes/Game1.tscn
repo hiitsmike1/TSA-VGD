@@ -18,7 +18,7 @@ jump_force1 = -350
 [node name="Player2" parent="." instance=ExtResource("2_egjqw")]
 unique_name_in_owner = true
 z_index = -1
-position = Vector2(-260, -45)
+position = Vector2(-86, -145)
 jump_force2 = -350
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_61o05")]
