@@ -22,18 +22,18 @@ scale = Vector2(0.438, 0.438)
 texture = ExtResource("2_3t7it")
 flip_v = true
 
-[node name="It2" type="ColorRect" parent="."]
+[node name="Negative" type="ColorRect" parent="."]
 unique_name_in_owner = true
 offset_left = -6.0
 offset_top = -58.0
 offset_right = 7.0
 offset_bottom = -45.0
-color = Color(1, 0, 0, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="ItRadius2" type="Area2D" parent="."]
+[node name="NegRad" type="Area2D" parent="."]
 position = Vector2(1.86265e-09, -5.68434e-14)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItRadius2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NegRad"]
 shape = SubResource("CircleShape2D_vavmk")
 
-[connection signal="area_entered" from="ItRadius2" to="." method="_on_it_radius_2_area_entered"]
+[connection signal="area_entered" from="NegRad" to="." method="_on_it_radius_2_area_entered"]
