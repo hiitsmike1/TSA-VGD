@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_duyns")
 scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("2_lxonr")
 
-[node name="It1" type="ColorRect" parent="."]
+[node name="Positive" type="ColorRect" parent="."]
 unique_name_in_owner = true
 offset_left = -7.0
 offset_top = -59.0
@@ -28,9 +28,9 @@ offset_right = 6.0
 offset_bottom = -46.0
 color = Color(1, 0, 0, 1)
 
-[node name="ItRadius1" type="Area2D" parent="."]
+[node name="PosRad" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItRadius1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PosRad"]
 shape = SubResource("CircleShape2D_2t7ni")
 
-[connection signal="area_entered" from="ItRadius1" to="." method="_on_it_radius_1_area_entered"]
+[connection signal="area_entered" from="PosRad" to="." method="_on_it_radius_1_area_entered"]

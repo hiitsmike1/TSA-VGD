@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://blkjwl44q6jyf"]
+
+[ext_resource type="Script" path="res://Scripts/color_rect.gd" id="1_pk4tj"]
+[ext_resource type="Script" path="res://Scripts/neg_wire.gd" id="2_i115t"]
+[ext_resource type="Script" path="res://Scripts/pos_wire.gd" id="3_polnw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orc22"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_df0d5"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_left = -35.0
+offset_top = -244.0
+offset_right = 5.0
+offset_bottom = -204.0
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_pk4tj")
+metadata/_edit_use_anchors_ = true
+
+[node name="NegWire" type="Line2D" parent="."]
+unique_name_in_owner = true
+points = PackedVector2Array(40, 22, 439, 22, 439, 301)
+script = ExtResource("2_i115t")
+
+[node name="PosWire" type="Line2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(37, -1)
+scale = Vector2(-1, 1)
+points = PackedVector2Array(37, 22, 439, 22, 439, 301)
+script = ExtResource("3_polnw")
+
+[node name="PosArea" type="Area2D" parent="."]
+position = Vector2(-402, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PosArea"]
+shape = SubResource("CircleShape2D_orc22")
+
+[node name="ColorRect" type="ColorRect" parent="PosArea"]
+offset_left = -3.0
+offset_right = 3.0
+offset_bottom = 7.0
+color = Color(0.589604, 0.301866, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="NegArea" type="Area2D" parent="."]
+position = Vector2(439, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NegArea"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_df0d5")
+
+[node name="ColorRect2" type="ColorRect" parent="NegArea"]
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 8.0
+color = Color(0.589604, 0.301866, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="PosArea" to="PosWire" method="_on_pos_area_body_entered"]
+[connection signal="body_exited" from="PosArea" to="PosWire" method="_on_pos_area_body_exited"]
+[connection signal="body_entered" from="NegArea" to="NegWire" method="_on_neg_area_body_entered"]
+[connection signal="body_exited" from="NegArea" to="NegWire" method="_on_neg_area_body_exited"]

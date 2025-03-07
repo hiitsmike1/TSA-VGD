@@ -14,17 +14,3 @@ func _physics_process(_delta):
 	var horizontal = Input.get_axis("move_left1", "move_right1")
 	velocity.x = speed1 * horizontal
 	move_and_slide()
-	if GlobalVar.it_just_changed:
-		it_changed()
-	
-func it_changed():
-	if GlobalVar.player1_it:
-		speed1 = 350
-		%It1.visible = true
-	else:
-		speed1 = 300
-		%It1.visible = false
-
-func _on_it_radius_1_area_entered(_area: Area2D) -> void:
-	GlobalVar.player1_it = !GlobalVar.player1_it
-	GlobalVar.it_just_changed = true
